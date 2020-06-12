@@ -1,11 +1,11 @@
 const express = require('express');
 
-const Projects = require('./project-model.js');
+const Resources = require('./resource-model.js');
 
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    Projects.getProjects()
+    Resources.getResources()
         .then(projects => {
             res.json(projects);
         })
@@ -18,12 +18,12 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     const data = req.body;
 
-    Projects.addProject(data)
-        .then(newProject => {
-            res.status(201).json(newProject);
+    Resources.addResource(data)
+        .then(newResource => {
+            res.status(201).json(newResource);
         })
         .catch(err => {
-            res.status(500).json({ message: 'Failed to add new project' });
+            res.status(500).json({ message: 'Failed to add new resource' });
         });
 });
 
