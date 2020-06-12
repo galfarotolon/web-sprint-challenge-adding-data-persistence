@@ -46,13 +46,22 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
-1. Explain the difference between `Relational Databases` and `SQL`.
+Explain the difference between Relational Databases and SQL.
 
-2. Why do tables need a `primary key`?
+A Relational Database is a management system. It is the database software itself, which manages several aspects of a database, such as storage, updating, and querying. SQL (Structured Query Language) on the other hand, is just the language used to interact with such a system. 
 
-3. What is the name given to a table column that references the primary key on another table.
+Why do tables need a primary key?
 
-4. What do we need in order to have a _many to many_ relationship between two tables.
+The Primary Key is essential in tables because it makes each record unique. Primary Keys are usually labeled as IDs and they increment by 1 each time a new piece of data is added to a particular table. 
+ 
+What is the name given to a table column that references the primary key on another table.
+
+This column is normally called the Foreign Key column, which represents the primary key (id) of that column. The foreign key number can be repeated, contrary to the primary key, which is always unique. 
+ 
+What do we need in order to have a many to many relationship between two tables.
+
+In order to create a many to many relationship between two tables, we need to create a third table that acts as the connector table. The primary key of the connect table is the combination of the primary keys (foreign keys in this third table) of the tables we want to join in the many to many relationship.
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
