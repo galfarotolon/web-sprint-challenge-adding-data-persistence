@@ -7,8 +7,9 @@ exports.up = function (knex) {
 
             tbl.string("name", 128).notNullable().index();
             tbl.string("description", 255);
-            tbl.boolean("completed").defaultTo(0).notNullable();
-            tbl.integer("resource_id").unsigned().references("resources.id")
+            tbl.boolean("completed").defaultTo(false);
+            tbl.integer("resource_id").unsigned().references("resources.id").onDelete("RESTRICT")
+                .onUpdate("CASCADE");
         })
 
 
@@ -17,7 +18,8 @@ exports.up = function (knex) {
 
             tbl.string("name", 128).notNullable().unique();
             tbl.string("description", 255);
-            tbl.integer("project_id").unsigned().references("projects.id")
+            tbl.integer("project_id").unsigned().references("projects.id").onDelete("RESTRICT")
+                .onUpdate("CASCADE");
 
         })
 
@@ -26,9 +28,10 @@ exports.up = function (knex) {
             tbl.increments();
 
             tbl.string("description", 255).notNullable();
-            tbl.integer("project_id").notNullable().unsigned().references("project.id")
+            tbl.integer("project_id").notNullable().unsigned().references("project.id").onDelete("RESTRICT")
+                .onUpdate("CASCADE");
             tbl.string("notes", 255)
-            tbl.boolean("completed").defaultTo(0).notNullable();
+            tbl.boolean("completed").defaultTo(false);
 
 
         })
